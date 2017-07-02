@@ -1,0 +1,923 @@
+@import url("map.css");
+body {
+	background-Color:#ffffff;
+	color: #000000;
+	margin: 0px 0 0 0;
+	text-align: center;
+}
+
+div#container {
+	position: relative;
+	width: 750px;
+	min-width: 750px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align:left;
+	background-Color: #E1E1D8;
+	color: #000000;	
+	z-index: 1;	
+}
+
+/* ACCESSIBILITY */
+
+div#skipnav {
+	position:absolute;
+	left:0px;
+	top:-500px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+/* DEFAULT STYLES */
+
+h1 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1.8em;
+	line-height: 1.2em;
+	color: #000;}
+
+h2 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	line-height: 1.2em;
+	color: #000;}	
+
+h3 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	line-height: 1.0em;
+	color: #000;}
+
+h4 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1.0em;
+	color: #000;
+	margin: 5px 0;}
+
+a {
+	text-decoration: underline;
+	color:#520063;}
+
+
+.clear { 
+	clear: both; 
+}
+
+/* HEADER */
+
+div#header_container {
+	float: left;
+	background-Color: #4A3265;
+}
+
+/* HEADER (left) */
+
+div#left_header {
+	float: left;
+	position: relative;	
+	width: 110px;
+	height: 155px;
+	background-Color: #CECFBE;
+	color: #000000;	
+}
+
+div#left_content_container {
+	float: left;
+	position: relative;	
+	width: 160px;
+	margin: -155px 0 0 -110px;
+	padding: 155px 0 0 0;
+	background-Color: #CECFBE;
+	z-index: 1;
+}
+
+div#logo {
+	float: left;
+	width:110px;
+	height:141px;
+}
+
+div#letters_science_section {
+	float: left;
+	width:110px;
+	height:17px;
+	background-Color: #CECFBE;
+	color: #ffffff;	
+}
+
+/* HEADER (right) */
+
+div#right_header {
+	float: left;
+	position: relative;
+	width: 640px;
+	height: 155px;
+}
+
+div#header {
+	float: left;
+	width:640px;
+	height:82px;
+}
+
+/* NAV BAR */
+
+div#top_nav {
+	float: left;
+	font-family: Helvetica, Arial, sans-serif; 
+	width:640px;
+	height:18px;
+	background-Color: #4D1E5E;
+}
+
+/* NAV BAR (menu) */
+
+div#listmenu {
+	width:640px; /* makes the div full width */
+	float:left;
+	font-size:0.75em;	/* SET FONT-SIZE HERE */
+	color: #D0C6D0;
+	background-color:#4D1E5E; /* colors the div */
+	margin-top:0px; /* TEMPORARY - pushes the div away from the top of the browser for clarity in this example*/
+	z-index:100;
+	}
+div#listmenu ul {
+	padding: 0;
+	margin-left: 5px;/* indents ul from edge of container - NOTE: diff value for IE in hacks below */
+	margin-top: 0;
+	margin-bottom: 0;	
+	z-index:100;	
+	}
+div#listmenu li {
+	float:left;	/* causes the list to align horizontally instead of stack */
+	position:relative; /* positioning context for the absolutely positioned drop-down */
+	list-style-type:none;	/* removes the bullet off each list item */
+	background-color:#4D1E5E; /*sets the background of the menu items */
+	z-index:100;
+	}
+div#listmenu li:first-child {
+	z-index:100;
+	}
+
+div#listmenu li:hover {	
+	background-color:#4D1E5E; /*sets the background of the menu items */
+	z-index:100;
+	}
+div#listmenu a {
+display:block;
+	padding:2px 8px 1px 8px; /*creates space each side of menu item's text */
+	text-decoration:none;	 /* removes the underlining of the link */
+	color: #D0C6D0;	/* sets the type color */
+	z-index:100;
+	}
+div#listmenu a:hover {
+	color: #FFFFFF;
+	}
+/* the menu ends here */
+/* the drop-down starts here */
+div#listmenu ul li ul {
+	margin:0;
+	z-index:100; /* puts drop-down on top of div - Safari needs this as menu is 1px higher */
+	position:absolute; /* positions the drop-down ul in relation to its relatively positioned li parent */
+	width:10em; /*sets the width of the menu - in combo with the li's 100% width, makes the menu stack*/
+	border-right:0; /* stops SCBs drops having two right borders - they inherit the border, IE doesn't */
+	left:-1px; /*aligns the drop exactly under the menu */
+	top: 17px;
+	}
+div#listmenu ul li ul li {padding:0;
+	width:100%; /* makes the list items fill the list container (ul) */
+	border-left:1px solid #4D1E5E; /*  three sides of each drop-down item */
+	border-bottom:1px solid #4D1E5E;
+	border-right:1px solid #4D1E5E;}
+div#listmenu ul li ul li a {padding:1px .5em;}
+div#listmenu ul li ul li:first-child {
+	border-top:1px solid #4D1E5E; /*the top edge of the dropdown */
+	z-index:100;
+	}
+/* make the drop-down display as the menu is rolled over */
+div#listmenu ul li ul {display:none;} /* conceals the drop-down when menu not hovered */
+div#listmenu ul li:hover ul {display:block; } /* shows the drop-down when the menu is hovered */
+
+/* pop-out starts here */
+body div#listmenu ul li ul li ul  {
+	position:absolute;
+	visibility:hidden; /* same effect as display:none in this situation */
+	top:-1px;
+	left:10em;
+	}
+div#listmenu ul li ul li:hover ul {visibility:visible;} /* same effect as display:block in this situation */
+
+/* second level popouts start here*/
+div#listmenu ul li ul li:hover ul li ul {visibility:hidden;}
+div#listmenu ul li ul li ul li:hover ul {visibility:visible;} /* same effect as display:block in this situation */
+
+/* PAGE TITLE TEXT*/
+
+div#page_title {
+	float: left;
+	width:640px;
+	height: 55px;
+	background: url("http://www.uww.edu/cls/common/images/page_title_background.jpg") no-repeat;
+}
+
+.page_title_text {
+	float: left;
+	width:640px;
+	height: 16px;
+	padding-top: 39px;
+	padding-left: 10px;
+	line-height: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 35px;
+	color: #4A3265;
+}
+
+/* CONTENT AREA */
+
+div#int_main_content {
+	width: auto;
+	float: left;
+	border-left: 110px solid #CECFBE;     
+	border-right: 168px solid #E1E1D8; 
+	background-color: #E1E1D8; /* center column colour */  
+	margin-bottom: -145px;	
+}
+
+div#inner {
+	margin: 0; 
+	width: 100%;
+}
+
+.common_tbl {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.0em;
+}
+
+div#int_main_content > div#inner { border-bottom: 1px solid #E1E1D8; }
+
+/* CONTENT AREA (left) */
+
+div#left_content_container {
+	float: left;
+	position: relative;	
+	width: 110px;
+	margin: -155px 0 0 -110px;
+	padding: 155px 0 0 0;
+	background-Color: #CECFBE;
+	z-index: 1;
+}
+
+div#left_nav {
+	float: left;
+	width:110px;
+	height: 244px;
+	min-height: 244px;
+	background-color: #CECFBE;
+	color: #000000;
+}
+
+div#left_content_nav a:hover {
+	text-decoration: none;
+	background-color:#E1E1D8;
+}
+
+div#left_content_nav {
+	float: left;
+	width:110px;
+	background-Color: #CECFBE;
+	color: #000000;	
+}
+
+div#left_content_nav li {
+	margin-left:-6px;
+	border-top:1px solid #CECFBE;
+	border-bottom:1px solid #CECFBE;
+	border-left:1px solid #CECFBE;
+	padding: 0px 0 2px 6px;
+}
+
+div#left_content_nav li:hover {
+	background:#E1E1D8;
+	margin-left:-6px;
+	padding-left:6px;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #CECFBE;
+}
+
+div#left_content_nav ul {
+	list-style-type:none;
+  margin: 2px 0 0 6px;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size:0.70em;
+	line-height: 1.5em;
+	color: #292929;    
+}
+
+div#left_content_nav a {
+	text-decoration: none;
+	color: #292929;
+	display:block;
+}
+
+div#left_content_nav li.selected {
+	background:#E1E1D8;
+	margin-left:-6px;
+	padding-left:6px;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #CECFBE;
+}
+
+div#left_content_nav li.bold {
+	font-weight:bold;
+}
+
+
+
+/* CONTENT AREA (center) */
+
+div#contentarea {
+	float: left;	
+	width: 452px;
+	padding: 0 10px 30px 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: .75em;
+	color: #333333;
+	background-Color: #E1E1D8;
+	z-index:10;
+}
+
+/* CONTENT AREA (right) */
+	
+div#right_content_container {
+	float: left;
+	position: relative;
+	width: 168px;
+	margin-right: -168px;
+	/*background-Color: #E1E1D8;*/
+	margin-bottom: 10px;}
+
+div#right_content_container ul { 
+	list-style:none;
+	border-left: 1px solid #999999;
+	margin:0;
+	padding:0;}
+
+div#right_content_container li {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:0.70em;
+	line-height: 1.2em;
+	font-weight:bold;
+	padding: 4px 0 4px 10px;}
+
+div#right_content_container li.selected {
+	border-bottom:1px solid #999999;}
+
+div#right_content_container li.current {
+	background-color: #CECFBE;
+	z-index:500;}
+
+div#right_content_container li a {
+	color: #000;
+	text-decoration: none;}
+
+div#clear_box_text {
+        top: 82px;
+        left: 32px;
+	position: absolute;
+	width: 123px;
+	letter-spacing: -0.2px;
+	line-height:16px;
+	padding: 0 5px 0 6px;
+	height: 89px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size:11px;
+	color: #ffffff;
+	z-index: 100;
+}
+
+div#spotlight_more {
+        top: 185px;
+        left: 32px;
+	position: absolute;
+	width: 123px;
+	letter-spacing: -0.2px;
+	line-height:12px;
+	padding: 0 5px 0 5px;
+	height: 15px;
+	text-align: right;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size:11px;	
+	color: #ffffff;
+	z-index: 100;	
+}
+
+div#spotlight_more a {
+	color: #ffffff;
+	text-decoration: underline;
+	z-index: 100;	
+}
+
+div#internal_clear_box_text {
+        top: 255px;
+        right: 23px;
+	position: absolute;
+	width: 123px;
+	letter-spacing: -0.2px;
+	line-height:12px;
+	padding: 0 5px 0 6px;
+	height: 89px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size:9px;
+	color: #ffffff;
+	z-index: 100;	
+}
+
+div#internal_spotlight_more {
+        top: 348px;
+        right: 23px;
+	position: absolute;
+	width: 123px;
+	letter-spacing: -0.2px;
+	line-height:12px;
+	padding: 0 5px 0 5px;
+	height: 15px;
+	text-align: right;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size:11px;	
+	color: #ffffff;
+	z-index: 100;
+}
+
+div#internal_spotlight_more a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+/* NEWS ITEMS */
+
+div#news {
+	float: left;
+	width:640px;
+	height: 200px;
+	background: url("http://www.uww.edu/cls/common/images/news_background.jpg") repeat-y;
+}
+
+div#news_logo {
+	float: left;
+	width:230px;
+	padding: 0 5px;
+}
+
+div#news_photo {
+	float: left;
+	width:98px;
+	margin-top: 10px;
+}
+
+div#news_items {
+	float: left;
+	width:350px;
+}
+
+div#news_items ul {
+	list-style-type:none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size:0.81em;
+	font-weight: bold;
+	line-height: 13px;
+	color: #ffffff;	
+}
+
+div#news_items li {
+	padding-top:0;
+	padding-right:0;
+	padding-left:0;
+	padding-bottom:8px;
+	margin: 0;
+}
+
+div#news_items ul li ul {
+	list-style-type:none;
+	margin: 0 0 5px 15px;	
+	padding: 0 15px 0 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size:0.75em;
+	color: #ffffff;
+}
+
+div#news_items a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+div#news_items ul li ul li {
+	padding: 0;
+	margin: 0;
+}
+
+/* RESOURCES */
+
+div#resources {
+	float: right;
+	width:640px;
+	height:22px;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size:0.8em;	/* SET FONT-SIZE HERE */
+	color: #FFFFFF;	
+	background: #4D1E5E url("http://www.uww.edu/common/images/cls/resources_background.jpg");
+	margin-top:0px;
+	z-index:101;
+}
+
+div#resources ul {
+	padding: 0;
+	margin-left: 5px;/* indents ul from edge of container - NOTE: diff value for IE in hacks below */
+	margin-top: 1px;
+	margin-bottom: 0;	
+	z-index:101;	
+	}
+div#resources li {
+	float:left;	/* causes the list to align horizontally instead of stack */
+	position:relative; /* positioning context for the absolutely positioned drop-down */
+	list-style-type:none;	/* removes the bullet off each list item */
+	z-index:101;
+	padding:1px 0px; /*creates space each side of menu item's text */
+	padding-top: 3px;
+	padding-bottom: 2px;
+	}
+
+div#resources li:hover {
+	z-index:100;
+	}
+div#resources a {
+	display:block;
+	padding:0px 8px; /*creates space each side of menu item's text */	
+	text-decoration:none;	 /* removes the underlining of the link */
+	color: #FFFFFF;	/* sets the type color */
+	z-index:100;
+	}
+div#resources a:hover {
+	color: #FFFFFF;
+	}
+
+/* LEFT TOOLS */
+
+div#left_tools {
+	float: left;
+	position: relative;
+	width:110px;
+	min-height: 129px;
+	display: table-cell;
+	vertical-align: bottom; 
+	background-Color: #CECFBE;
+	color: #000000;
+	z-index:2;	
+}
+
+div#left_home_tools {
+	float: left;
+	height: 60px;
+	width:110px;
+	display: table-cell;
+	vertical-align: bottom; 
+	background-Color: #CECFBE;
+	color: #000000;	
+}
+
+div#left_tools a:hover {
+	text-decoration: underline;
+}
+
+div#left_nav_tools {
+	float: left;
+       	position:relative;	
+	width:110px;
+	height:40px;
+	margin: 0 0 0 0;
+	background-Color: #CECFBE;	
+}
+
+div#left_nav_tools ul {
+       	position:relative;
+	list-style-type:none;
+        margin: 0 0 0 6px;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size:0.81em;
+	line-height: 1.25em;
+	color: #292929;
+}
+
+div#left_nav_tools a {
+	text-decoration: none;
+	color: #292929;
+}
+
+div#left_nav_resource_tools {
+	float: left;
+	position: relative;
+	width:110px;
+	background-Color: #CECFBE;	
+}
+
+div#left_nav_resource_tools ul {
+	position: relative;	
+	list-style-type:none;
+        margin: 0 0 0 6px;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size:0.81em;
+	color: #292929;
+}
+
+div#left_nav_resource_tools a {
+	text-decoration: none;
+	color: #292929;
+}
+
+/* LEFT NAV SEARCH */
+
+div#left_nav_search {
+       	float: left;
+       	position:relative;
+       	width:110px;       	
+}
+
+div#left_nav_search form {
+	padding: 0;
+	margin: 0;
+}
+
+div#search_box {
+       	float: left;
+       	position:relative;       	
+       	width:86px;
+       	text-align:right;
+       	padding: 0;
+       	margin: 0;
+        z-index: 100;
+}
+
+div#search_box input {  
+        margin: 3px 0 0 0;
+        font-size:10px;
+        height: 12px;       
+}
+
+div#search_button {
+       	float: left;
+       	position:relative;       	
+       	width:24px;
+       	padding: 0;
+       	margin: 0;       	        
+}
+
+/* FOOTER */
+
+div#footer_wrapper {
+	float: left;
+	position: relative;
+	width:750px;
+	padding: 0;
+	margin: 0 -3px 0 0;
+}
+
+div#bottom_content_swoosh {
+	float: left;
+	position: relative;
+	width:750px;
+	height:22px;
+	margin: 0;
+	padding: 0;
+	background: url("http://www.uww.edu/cls/common/images/bottom_content_swoosh.jpg");
+}
+
+div#bottom_swoosh {
+	float: left;
+	width:750px;
+	height:22px;
+	background: url("http://www.uww.edu/cls/common/images/bottom_swoosh.jpg");
+}
+
+div#footer {
+	float: left;
+	padding: 10px 0 0 0;	
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:0.69em;
+	text-align: center;
+	width:750px;
+	height:58px;
+	color: #5E5E5F;
+	background-Color: #FFFFFF;
+}
+
+/* PAGE UNIQUE CODE */
+
+/* Third Tier Pages */
+
+div#left_container {
+	float: left;
+	position: relative;
+	width: 110px;
+	min-width: 110px;
+	height: 244px;
+	min-height: 244px;	
+	background-Color: #CECFBE;
+	color: #000000;	
+	margin-right: -110px;
+}
+
+div#int_third_tier_content {
+	width: auto;
+	float: left;
+	border-left-width: 110px;  /* left column width */
+	border-left-color: #CECFBE;   /* left column colour CECFBE */         
+
+	background-color: #E1E1D8; /* center column colour */  
+  
+ 	border-left-style: solid; 
+	margin-bottom: -145px;
+	z-index:10;
+}
+
+div#int_third_tier_content > div#inner { border-bottom: 1px solid #E1E1D8; }
+
+div#contentarea_third_tier {
+	float: left;
+	line-height:17px;
+	width: 620px;
+	min-height: 435px;
+	padding: 10px 10px 20px 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: .75em;
+	color: #333333;	
+	z-index:10;
+}
+
+/* Accessibility */
+
+div#skipnav {
+	position:absolute;
+	left:0px;
+	top:-500px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+/* Homepage */
+
+div#content_wrapper {
+	float: left;
+	position: relative;
+	width: 750px;
+	background-Color: #E1E1D8;
+	color: #000000;	
+}
+
+div#main_image {
+	float: left;
+	position: relative;
+	width:640px;
+	height:260px;
+	z-index: 2;
+}
+
+div#inner {
+	margin: 0; 
+	width: 100%;
+}
+
+div#inner_top {
+	margin: 0; 
+	width: 100%;
+}
+
+div#home_content_top {
+	width: auto;
+	float: left;
+	border-left-width: 110px;  /* left column width */
+	border-left-color: #CECFBE;   /* left column colour CECFBE */
+
+	background-color: #E1E1D8; /* center column colour */  
+  
+ 	border-left-style: solid; 
+}
+
+div#home_content_top > div#inner_top { border-bottom: 1px solid #E1E1D8; }
+
+div#home_content {
+	width: auto;
+	float: left;
+	border-left-width: 110px;  /* left column width */
+	border-left-color: #CECFBE;   /* left column colour CECFBE */
+
+	background-color: #E1E1D8; /* center column colour */  
+  
+ 	border-left-style: solid; 
+	margin-bottom: -65px;
+}
+
+div#home_content > div#inner { border-bottom: 1px solid #E1E1D8; }
+
+.imagefloat { 
+float: left;
+padding: 10px;}
+
+
+.extraspace {
+
+padding: 5px 10px 10px 10px;
+
+}
+
+ol.form li {
+	padding-bottom: 8px;
+}
+
+label.form-label {
+	display:inline-block;
+	width: 175px;
+}
+
+.leftcol {
+padding-top:10px;
+float:left;
+width:300px;
+}
+
+.rightcol {
+padding-top:10px;
+float:right;
+width:300px;
+}
+
+/* RSS Box */
+
+.rss-box {
+	padding: 0px !Important;
+	background-color: #d7d8b9;
+}
+
+.wide {
+width: 620px !Important;
+border-color:#9b9c7d;
+border:1px solid #9b9c7d;
+}
+
+h2.box {
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.rss-box-header {
+background: repeat-x top url('http://www.uww.edu/cls/common/images/bloggradient.jpg');
+height: 25px;
+}
+
+.follow-link a {
+	color:#06529f !Important;
+	font-size:11px;
+	padding-left:20px !Important;
+}
+
+ul.rss-items {
+	list-style: none;
+}
+
+.rss-date {
+	color:#666;
+	font-size: 10px;
+}
+
+li.rss-item {
+	line-height: 1.8em !Important;
+	padding: 0px !Important;
+}
+
+li.rss-item a {
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 1.5em;
+	}
+	
+li.rss-item a:hover {
+	color:			#44687D !Important;
+	text-decoration:	underline;
+}
+
