@@ -1,0 +1,21 @@
+div#header_container {
+	display:none;
+	}
+
+div#left_content_container {
+	display:none;
+	}
+
+div#footer {
+	display:none;
+	}
+
+div#left_tools {
+	display:none;
+	}
+
+div#int_third_tier_content {
+	border:0;
+	padding:0;
+	margin:0;
+	}
